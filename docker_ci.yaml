@@ -1,0 +1,17 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+    
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag ghcr.io/felipecosta09/mariogame:latest
+    - name: Push Docker Image to GitHub Packages
+      run: |
+           docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GH_TOKEN }}
+           docker push ghcr.io/felipecosta09/mariogame:latest
