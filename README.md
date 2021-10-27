@@ -1,4 +1,4 @@
-# Docker Super Mario
+# Docker Super Mario.
 Infinite Mario in HTML5 JavaScript - using Canvas and Audio elements
 
 [![asciicast](https://asciinema.org/a/46186.png)](https://asciinema.org/a/46186)
